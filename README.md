@@ -55,11 +55,25 @@ The texture distorsion is obtained by twisting polygons. The solution is to rend
 
 In order to add light sources to your PSXified models, some modifications are necessary.
 
-First, add vertex colors to each mesh you want light to apply :
+### Blender v3.0+
+
+Due to 'Vertex Colors' tab being renamed to 'Color Attributes' and it having more options in later Blender versions, will cause the lighting to not work if not setup with the correct options.
+
+1. Add a new Vertex Color/Color Attribute to each mesh you want light to apply:
+
+![Add vertex colors 3.0](https://github.com/BmoXD/PSXifyBlender2.8/blob/main/Previews/AddVertexColor3.png)
+
+2. Multiply the output of your texture with the Color Attribute node by the Attribute 'Color':
+
+![AttributeCol 3.0](https://github.com/BmoXD/PSXifyBlender2.8/blob/main/Previews/MaterialModifications3.png)
+
+### Blender v2.8+
+
+1. First, add vertex colors to each mesh you want light to apply :
 
 ![Add vertex colors](https://github.com/DreliasJackCarter/PSXifyBlender2.8/blob/main/Previews/AddVertexColor.jpg)
 
-Then multiply the output of your texture by the Attribute 'Col' :
+2. Then multiply the output of your texture by the Attribute 'Col' :
 
 ![AttributeCol](https://github.com/DreliasJackCarter/PSXifyBlender2.8/blob/main/Previews/MaterialModifications.jpg)
 
