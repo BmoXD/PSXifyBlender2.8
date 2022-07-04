@@ -1,4 +1,4 @@
-# 08/2021
+# 07/2022
 # PSXify script by Lucas Fierfort
 # V1.2
 # IMPORTANT : Please make sure to make a backup of your file before launching this script, just in case.
@@ -26,6 +26,7 @@ depth = 0.2                         # Relative distance from PSX camera
 PSXcameraScale = 1.33               # PSX camera FOV, set it manually to fit the orginal camera
 
 lightName = 'Sun'                   # Name of the light source you want to use
+VertexColorName = 'Color'           # Name of the Vertex Color Attribute used for lighting
 #--------------------------------------LIGHT SETTINGS-----------------------------------------------
 useLights = True                    # True if you want to simulate lights
 
@@ -135,7 +136,7 @@ def PSXifyCollection(camera, collection, scene):
             matrix = object.matrix_world
             rotationQuat = object.rotation_euler.to_quaternion()
             
-            colors = targetMesh.vertex_colors.get('Col')
+            colors = targetMesh.vertex_colors.get(VertexColorName)
             lightDir = light.rotation_euler.to_quaternion() @ mathutils.Vector([0,0,1])
             
             print("snapping",targetObject.name, "from",object.name, "coordinates...")
